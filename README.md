@@ -20,6 +20,11 @@
     <a href="https://goreportcard.com/report/github.com/goforj/str"><img src="https://goreportcard.com/badge/github.com/goforj/str" alt="Go Report Card"></a>
 </p>
 
+## Installation
+
+```sh
+go get github.com/goforj/str
+```
 
 ## Runnable examples
 
