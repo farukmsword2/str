@@ -12,7 +12,7 @@ func main() {
 	// Unwrap removes matching before and after strings if present.
 
 	// Example: unwrap string
-	v := str.Of("\"GoForj\"")
-	godump.Dump(v.Unwrap("\"", "\"").String())
+	v := str.Of("\"GoForj\"").Unwrap("\"", "\"").String()
+	godump.Dump(v)
 	// #string GoForj
 }

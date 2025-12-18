@@ -12,7 +12,7 @@ func main() {
 	// WordCount returns the number of word tokens (letters/digits runs).
 
 	// Example: count words
-	v := str.Of("Hello, world!")
-	godump.Dump(v.WordCount())
+	v := str.Of("Hello, world!").WordCount()
+	godump.Dump(v)
 	// #int 2
 }

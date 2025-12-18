@@ -12,7 +12,7 @@ func main() {
 	// ToUpper returns an uppercase copy of the string using Unicode rules.
 
 	// Example: uppercase text
-	v := str.Of("GoLang")
-	godump.Dump(v.ToUpper().String())
+	v := str.Of("GoLang").ToUpper().String()
+	godump.Dump(v)
 	// #string GOLANG
 }

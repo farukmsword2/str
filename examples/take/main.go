@@ -12,7 +12,7 @@ func main() {
 	// Take returns the first length runes of the string (clamped).
 
 	// Example: take head
-	v := str.Of("gophers")
-	godump.Dump(v.Take(3).String())
+	v := str.Of("gophers").Take(3).String()
+	godump.Dump(v)
 	// #string gop
 }

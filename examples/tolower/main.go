@@ -12,7 +12,7 @@ func main() {
 	// ToLower returns a lowercase copy of the string using Unicode rules.
 
 	// Example: lowercase text
-	v := str.Of("GoLang")
-	godump.Dump(v.ToLower().String())
+	v := str.Of("GoLang").ToLower().String()
+	godump.Dump(v)
 	// #string golang
 }

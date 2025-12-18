@@ -10,8 +10,8 @@ import (
 //
 // Example: title case words
 //
-//	v := str.Of("a nice title uses the correct case")
-//	godump.Dump(v.Title().String())
+//	v := str.Of("a nice title uses the correct case").Title().String()
+//	godump.Dump(v)
 //	// #string A Nice Title Uses The Correct Case
 func (s String) Title() String {
 	var b strings.Builder

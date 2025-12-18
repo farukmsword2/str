@@ -5,8 +5,8 @@ package str
 //
 // Example: wrap string
 //
-//	v := str.Of("GoForj")
-//	godump.Dump(v.Wrap("\"", "").String())
+//	v := str.Of("GoForj").Wrap("\"", "").String()
+//	godump.Dump(v)
 //	// #string "GoForj"
 func (s String) Wrap(before, after string) String {
 	if after == "" {
@@ -20,8 +20,8 @@ func (s String) Wrap(before, after string) String {
 //
 // Example: unwrap string
 //
-//	v := str.Of("\"GoForj\"")
-//	godump.Dump(v.Unwrap("\"", "\"").String())
+//	v := str.Of("\"GoForj\"").Unwrap("\"", "\"").String()
+//	godump.Dump(v)
 //	// #string GoForj
 func (s String) Unwrap(before, after string) String {
 	if after == "" {

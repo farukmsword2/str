@@ -7,8 +7,8 @@ import "strings"
 //
 // Example: pad left
 //
-//	v := str.Of("go")
-//	godump.Dump(v.PadLeft(5, " ").String())
+//	v := str.Of("go").PadLeft(5, " ").String()
+//	godump.Dump(v)
 //	// #string \u00a0\u00a0\u00a0go
 func (s String) PadLeft(length int, pad string) String {
 	return padInternal(s.s, length, pad, true, false)
@@ -19,8 +19,8 @@ func (s String) PadLeft(length int, pad string) String {
 //
 // Example: pad right
 //
-//	v := str.Of("go")
-//	godump.Dump(v.PadRight(5, ".").String())
+//	v := str.Of("go").PadRight(5, ".").String()
+//	godump.Dump(v)
 //	// #string go...
 func (s String) PadRight(length int, pad string) String {
 	return padInternal(s.s, length, pad, false, true)
@@ -31,8 +31,8 @@ func (s String) PadRight(length int, pad string) String {
 //
 // Example: pad both
 //
-//	v := str.Of("go")
-//	godump.Dump(v.PadBoth(6, "-").String())
+//	v := str.Of("go").PadBoth(6, "-").String()
+//	godump.Dump(v)
 //	// #string --go--
 func (s String) PadBoth(length int, pad string) String {
 	return padInternal(s.s, length, pad, true, true)

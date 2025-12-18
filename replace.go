@@ -11,8 +11,8 @@ import (
 //
 // Example: replace first
 //
-//	v := str.Of("gopher gopher")
-//	godump.Dump(v.ReplaceFirst("gopher", "go").String())
+//	v := str.Of("gopher gopher").ReplaceFirst("gopher", "go").String()
+//	godump.Dump(v)
 //	// #string go gopher
 func (s String) ReplaceFirst(old, repl string) String {
 	return String{s: strings.Replace(s.s, old, repl, 1)}
@@ -23,8 +23,8 @@ func (s String) ReplaceFirst(old, repl string) String {
 //
 // Example: replace last
 //
-//	v := str.Of("gopher gopher")
-//	godump.Dump(v.ReplaceLast("gopher", "go").String())
+//	v := str.Of("gopher gopher").ReplaceLast("gopher", "go").String()
+//	godump.Dump(v)
 //	// #string gopher go
 func (s String) ReplaceLast(old, repl string) String {
 	idx := strings.LastIndex(s.s, old)
@@ -63,9 +63,9 @@ func (s String) ReplaceArray(olds []string, repl string) String {
 //
 // Example: regex replace with callback
 //
-//	v := str.Of("Hello 123 World")
 //	re := regexp.MustCompile(`\d+`)
-//	godump.Dump(v.ReplaceMatches(re, func(m string) string { return "[" + m + "]" }).String())
+//	v := str.Of("Hello 123 World").ReplaceMatches(re, func(m string) string { return "[" + m + "]" }).String()
+//	godump.Dump(v)
 //	// #string Hello [123] World
 func (s String) ReplaceMatches(pattern *regexp.Regexp, repl func(string) string) String {
 	return String{s: pattern.ReplaceAllStringFunc(s.s, repl)}
@@ -76,9 +76,9 @@ func (s String) ReplaceMatches(pattern *regexp.Regexp, repl func(string) string)
 //
 // Example: swap map
 //
-//	v := str.Of("Gophers are great!")
 //	pairs := map[string]string{"Gophers": "GoForj", "great": "fantastic"}
-//	godump.Dump(v.Swap(pairs).String())
+//	v := str.Of("Gophers are great!").Swap(pairs).String()
+//	godump.Dump(v)
 //	// #string GoForj are fantastic!
 func (s String) Swap(pairs map[string]string) String {
 	if len(pairs) == 0 {

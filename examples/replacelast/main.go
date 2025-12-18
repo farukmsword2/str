@@ -12,7 +12,7 @@ func main() {
 	// ReplaceLast replaces the last occurrence of old with repl.
 
 	// Example: replace last
-	v := str.Of("gopher gopher")
-	godump.Dump(v.ReplaceLast("gopher", "go").String())
+	v := str.Of("gopher gopher").ReplaceLast("gopher", "go").String()
+	godump.Dump(v)
 	// #string gopher go
 }

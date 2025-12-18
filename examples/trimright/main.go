@@ -12,7 +12,7 @@ func main() {
 	// TrimRight trims trailing characters. If cutset is empty, trims Unicode whitespace.
 
 	// Example: trim right
-	v := str.Of("  GoForj  ")
-	godump.Dump(v.TrimRight("").String())
+	v := str.Of("  GoForj  ").TrimRight("").String()
+	godump.Dump(v)
 	// #string   GoForj
 }

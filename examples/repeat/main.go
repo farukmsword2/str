@@ -12,7 +12,7 @@ func main() {
 	// Repeat repeats the string count times (non-negative).
 
 	// Example: repeat string
-	v := str.Of("go")
-	godump.Dump(v.Repeat(3).String())
+	v := str.Of("go").Repeat(3).String()
+	godump.Dump(v)
 	// #string gogogo
 }

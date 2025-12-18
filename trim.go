@@ -10,8 +10,8 @@ import (
 //
 // Example: trim whitespace
 //
-//	v := str.Of("  GoForj  ")
-//	godump.Dump(v.Trim("").String())
+//	v := str.Of("  GoForj  ").Trim("").String()
+//	godump.Dump(v)
 //	// #string GoForj
 func (s String) Trim(cutset string) String {
 	if cutset == "" {
@@ -25,8 +25,8 @@ func (s String) Trim(cutset string) String {
 //
 // Example: trim left
 //
-//	v := str.Of("  GoForj  ")
-//	godump.Dump(v.TrimLeft("").String())
+//	v := str.Of("  GoForj  ").TrimLeft("").String()
+//	godump.Dump(v)
 //	// #string GoForj
 func (s String) TrimLeft(cutset string) String {
 	if cutset == "" {
@@ -40,8 +40,8 @@ func (s String) TrimLeft(cutset string) String {
 //
 // Example: trim right
 //
-//	v := str.Of("  GoForj  ")
-//	godump.Dump(v.TrimRight("").String())
+//	v := str.Of("  GoForj  ").TrimRight("").String()
+//	godump.Dump(v)
 //	// #string   GoForj
 func (s String) TrimRight(cutset string) String {
 	if cutset == "" {

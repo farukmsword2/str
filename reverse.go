@@ -5,8 +5,8 @@ package str
 //
 // Example: reverse
 //
-//	v := str.Of("naïve")
-//	godump.Dump(v.Reverse().String())
+//	v := str.Of("naïve").Reverse().String()
+//	godump.Dump(v)
 //	// #string evïan
 func (s String) Reverse() String {
 	runes := []rune(s.s)

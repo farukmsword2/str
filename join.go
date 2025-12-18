@@ -7,8 +7,8 @@ import "strings"
 //
 // Example: join words
 //
-//	v := str.Of("unused")
-//	godump.Dump(v.Join([]string{"foo", "bar"}, "-").String())
+//	v := str.Of("unused").Join([]string{"foo", "bar"}, "-").String()
+//	godump.Dump(v)
 //	// #string foo-bar
 func (s String) Join(words []string, sep string) String {
 	return String{s: strings.Join(words, sep)}

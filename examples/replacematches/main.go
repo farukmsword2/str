@@ -13,8 +13,8 @@ func main() {
 	// ReplaceMatches applies repl to each regex match and returns the result.
 
 	// Example: regex replace with callback
-	v := str.Of("Hello 123 World")
 	re := regexp.MustCompile(`\d+`)
-	godump.Dump(v.ReplaceMatches(re, func(m string) string { return "[" + m + "]" }).String())
+	v := str.Of("Hello 123 World").ReplaceMatches(re, func(m string) string { return "[" + m + "]" }).String()
+	godump.Dump(v)
 	// #string Hello [123] World
 }

@@ -12,7 +12,7 @@ func main() {
 	// Kebab converts the string to kebab-case.
 
 	// Example: kebab case
-	v := str.Of("fooBar baz")
-	godump.Dump(v.Kebab().String())
+	v := str.Of("fooBar baz").Kebab().String()
+	godump.Dump(v)
 	// #string foo-bar-baz
 }

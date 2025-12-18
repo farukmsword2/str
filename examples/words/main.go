@@ -12,7 +12,7 @@ func main() {
 	// Words limits the string to count words, appending suffix if truncated.
 
 	// Example: limit words
-	v := str.Of("Perfectly balanced, as all things should be.")
-	godump.Dump(v.Words(3, " >>>").String())
+	v := str.Of("Perfectly balanced, as all things should be.").Words(3, " >>>").String()
+	godump.Dump(v)
 	// #string Perfectly balanced as >>>
 }

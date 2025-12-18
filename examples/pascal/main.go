@@ -13,6 +13,6 @@ func main() {
 
 	// Example: pascal case
 	v := str.Of("foo_bar baz")
-	godump.Dump(v.Pascal().String())
+	godump.Dump(v)
 	// #string FooBarBaz
 }
