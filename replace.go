@@ -76,10 +76,10 @@ func (s String) ReplaceMatches(pattern *regexp.Regexp, repl func(string) string)
 //
 // Example: swap map
 //
-//	pairs := map[string]string{"Gophers": "GoForj", "great": "fantastic"}
+//	pairs := map[string]string{"Gophers": "GoForj", "are": "is", "great": "fantastic"}
 //	v := str.Of("Gophers are great!").Swap(pairs).String()
 //	godump.Dump(v)
-//	// #string GoForj are fantastic!
+//	// #string GoForj is fantastic!
 func (s String) Swap(pairs map[string]string) String {
 	if len(pairs) == 0 {
 		return s
