@@ -27,3 +27,17 @@ func TestTransliterateBasic(t *testing.T) {
 		t.Fatalf("unexpected transliteration for z")
 	}
 }
+
+func TestTransliterate(t *testing.T) {
+	t.Parallel()
+
+	if got := Of("café déjà vu").Transliterate().String(); got != "cafe deja vu" {
+		t.Fatalf("Transliterate = %q", got)
+	}
+	if got := Of("Go").Transliterate().String(); got != "Go" {
+		t.Fatalf("Transliterate no change = %q", got)
+	}
+	if got := Of("").Transliterate().String(); got != "" {
+		t.Fatalf("Transliterate empty = %q", got)
+	}
+}

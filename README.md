@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/github/v/tag/goforj/str?label=version&sort=semver" alt="Latest tag">
     <a href="https://codecov.io/gh/goforj/str" ><img src="https://codecov.io/github/goforj/str/graph/badge.svg?token=9KT46ZORP3"/></a>
 <!-- test-count:embed:start -->
-    <img src="https://img.shields.io/badge/tests-154-brightgreen" alt="Tests">
+    <img src="https://img.shields.io/badge/tests-167-brightgreen" alt="Tests">
 <!-- test-count:embed:end -->
     <a href="https://goreportcard.com/report/github.com/goforj/str"><img src="https://goreportcard.com/badge/github.com/goforj/str" alt="Go Report Card"></a>
 </p>
@@ -45,7 +45,7 @@ This guarantees all examples are valid, up-to-date, and remain functional as the
 | **Affixes** | [ChopEnd](#chopend) [ChopStart](#chopstart) [EnsurePrefix](#ensureprefix) [EnsureSuffix](#ensuresuffix) [Unwrap](#unwrap) [Wrap](#wrap) |
 | **Case** | [Camel](#camel) [Headline](#headline) [Kebab](#kebab) [LcFirst](#lcfirst) [Pascal](#pascal) [Snake](#snake) [Title](#title) [ToLower](#tolower) [ToTitle](#totitle) [ToUpper](#toupper) [UcFirst](#ucfirst) [UcWords](#ucwords) |
 | **Checks** | [IsASCII](#isascii) [IsBlank](#isblank) [IsEmpty](#isempty) |
-| **Cleanup** | [Deduplicate](#deduplicate) [Squish](#squish) [Trim](#trim) [TrimLeft](#trimleft) [TrimRight](#trimright) |
+| **Cleanup** | [Deduplicate](#deduplicate) [NormalizeNewlines](#normalizenewlines) [NormalizeSpace](#normalizespace) [Squish](#squish) [Trim](#trim) [TrimLeft](#trimleft) [TrimRight](#trimright) |
 | **Comparison** | [Equals](#equals) [EqualsFold](#equalsfold) |
 | **Compose** | [Append](#append) [NewLine](#newline) [Prepend](#prepend) |
 | **Encoding** | [FromBase64](#frombase64) [ToBase64](#tobase64) |
@@ -54,13 +54,13 @@ This guarantees all examples are valid, up-to-date, and remain functional as the
 | **Masking** | [Mask](#mask) |
 | **Match** | [Is](#is) [IsMatch](#ismatch) |
 | **Padding** | [PadBoth](#padboth) [PadLeft](#padleft) [PadRight](#padright) |
-| **Replace** | [Remove](#remove) [ReplaceAll](#replaceall) [ReplaceArray](#replacearray) [ReplaceFirst](#replacefirst) [ReplaceLast](#replacelast) [ReplaceMatches](#replacematches) [Swap](#swap) |
+| **Replace** | [Remove](#remove) [ReplaceAll](#replaceall) [ReplaceArray](#replacearray) [ReplaceFirst](#replacefirst) [ReplaceFirstFold](#replacefirstfold) [ReplaceFold](#replacefold) [ReplaceLast](#replacelast) [ReplaceLastFold](#replacelastfold) [ReplaceMatches](#replacematches) [Swap](#swap) |
 | **Search** | [Contains](#contains) [ContainsAll](#containsall) [ContainsAllFold](#containsallfold) [ContainsFold](#containsfold) [Count](#count) [DoesntContain](#doesntcontain) [DoesntContainFold](#doesntcontainfold) [DoesntEndWith](#doesntendwith) [DoesntEndWithFold](#doesntendwithfold) [DoesntStartWith](#doesntstartwith) [DoesntStartWithFold](#doesntstartwithfold) [EndsWith](#endswith) [EndsWithFold](#endswithfold) [Index](#index) [LastIndex](#lastindex) [StartsWith](#startswith) [StartsWithFold](#startswithfold) |
 | **Slug** | [Slug](#slug) |
 | **Snippet** | [Excerpt](#excerpt) |
-| **Split** | [Split](#split) [UcSplit](#ucsplit) |
+| **Split** | [Lines](#lines) [Split](#split) [UcSplit](#ucsplit) |
 | **Substrings** | [After](#after) [AfterLast](#afterlast) [Before](#before) [BeforeLast](#beforelast) [Between](#between) [BetweenFirst](#betweenfirst) [CharAt](#charat) [Limit](#limit) [Slice](#slice) [Take](#take) [TakeLast](#takelast) |
-| **Transform** | [Repeat](#repeat) [Reverse](#reverse) |
+| **Transform** | [Repeat](#repeat) [Reverse](#reverse) [Transliterate](#transliterate) |
 | **Words** | [FirstWord](#firstword) [Join](#join) [LastWord](#lastword) [SplitWords](#splitwords) [WordCount](#wordcount) [Words](#words) [WrapWords](#wrapwords) |
 
 
@@ -293,6 +293,26 @@ If char is zero, space is used.
 v := str.Of("The   Go   Playground").Deduplicate(' ').String()
 godump.Dump(v)
 // #string The Go Playground
+```
+
+### <a id="normalizenewlines"></a>NormalizeNewlines
+
+NormalizeNewlines replaces CRLF, CR, and Unicode separators with \n.
+
+```go
+v := str.Of("a\\r\\nb\\u2028c").NormalizeNewlines().String()
+godump.Dump(v)
+// #string a\nb\nc
+```
+
+### <a id="normalizespace"></a>NormalizeSpace
+
+NormalizeSpace collapses whitespace runs to single spaces without trimming ends.
+
+```go
+v := str.Of("  go   forj  ").NormalizeSpace().String()
+godump.Dump(v)
+// #string  go forj
 ```
 
 ### <a id="squish"></a>Squish
@@ -578,6 +598,26 @@ godump.Dump(v)
 // #string go gopher
 ```
 
+### <a id="replacefirstfold"></a>ReplaceFirstFold
+
+ReplaceFirstFold replaces the first occurrence of old with repl using Unicode case folding.
+
+```go
+v := str.Of("go gopher GO").ReplaceFirstFold("GO", "Go").String()
+godump.Dump(v)
+// #string Go gopher GO
+```
+
+### <a id="replacefold"></a>ReplaceFold
+
+ReplaceFold replaces all occurrences of old with repl using Unicode case folding.
+
+```go
+v := str.Of("go gopher GO").ReplaceFold("GO", "Go").String()
+godump.Dump(v)
+// #string Go Gopher Go
+```
+
 ### <a id="replacelast"></a>ReplaceLast
 
 ReplaceLast replaces the last occurrence of old with repl.
@@ -586,6 +626,16 @@ ReplaceLast replaces the last occurrence of old with repl.
 v := str.Of("gopher gopher").ReplaceLast("gopher", "go").String()
 godump.Dump(v)
 // #string gopher go
+```
+
+### <a id="replacelastfold"></a>ReplaceLastFold
+
+ReplaceLastFold replaces the last occurrence of old with repl using Unicode case folding.
+
+```go
+v := str.Of("go gopher GO").ReplaceLastFold("GO", "Go").String()
+godump.Dump(v)
+// #string go gopher Go
 ```
 
 ### <a id="replacematches"></a>ReplaceMatches
@@ -819,6 +869,16 @@ godump.Dump(v.String())
 
 ## Split
 
+### <a id="lines"></a>Lines
+
+Lines splits the string into lines after normalizing newline variants.
+
+```go
+v := str.Of("a\\r\\nb\\nc").Lines()
+godump.Dump(v)
+// #[]string [a b c]
+```
+
 ### <a id="split"></a>Split
 
 Split splits the string by the given separator.
@@ -979,6 +1039,16 @@ Reverse returns a rune-safe reversed string.
 v := str.Of("naïve").Reverse().String()
 godump.Dump(v)
 // #string evïan
+```
+
+### <a id="transliterate"></a>Transliterate
+
+Transliterate replaces a small set of accented runes with ASCII equivalents.
+
+```go
+v := str.Of("café déjà vu").Transliterate().String()
+godump.Dump(v)
+// #string cafe deja vu
 ```
 
 ## Words
