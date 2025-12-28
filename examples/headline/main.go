@@ -11,6 +11,6 @@ func main() {
 
 	// Example: headline
 	v := str.Of("emailNotification_sent").Headline().String()
-	str.Dump(v)
+	println(v)
 	// #string Email Notification Sent
 }

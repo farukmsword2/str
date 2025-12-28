@@ -6,7 +6,7 @@ package str
 // Example: append text
 //
 //	v := str.Of("Go").Append("Forj", "!").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string GoForj!
 func (s String) Append(parts ...string) String {
 	out := s.s

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: normalize newline variants
 	v := str.Of("a\\r\\nb\\u2028c").NormalizeNewlines().String()
-	str.Dump(v)
+	println(v)
 	// #string a\nb\nc
 }

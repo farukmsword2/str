@@ -6,7 +6,7 @@ package str
 // Example: replace range
 //
 //	v := str.Of("naïve café").SubstrReplace("i", 2, 3).String()
-//	str.Dump(v)
+//	println(v)
 //	// #string naive café
 func (s String) SubstrReplace(repl string, start, end int) String {
 	runes := []rune(s.s)

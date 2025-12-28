@@ -10,6 +10,6 @@ func main() {
 
 	// Example: replace last
 	v := str.Of("gopher gopher").ReplaceLast("gopher", "go").String()
-	str.Dump(v)
+	println(v)
 	// #string gopher go
 }

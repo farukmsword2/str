@@ -10,6 +10,6 @@ func main() {
 
 	// Example: lowercase text
 	v := str.Of("GoLang").ToLower().String()
-	str.Dump(v)
+	println(v)
 	// #string golang
 }

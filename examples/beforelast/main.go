@@ -11,6 +11,6 @@ func main() {
 
 	// Example: slice before last separator
 	v := str.Of("pkg/path/file.txt").BeforeLast("/").String()
-	str.Dump(v)
+	println(v)
 	// #string pkg/path
 }

@@ -11,6 +11,6 @@ func main() {
 
 	// Example: rune-safe slice
 	v := str.Of("naïve café").Slice(3, 7).String()
-	str.Dump(v)
+	println(v)
 	// #string e ca
 }

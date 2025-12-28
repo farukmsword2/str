@@ -9,7 +9,7 @@ import "regexp"
 //
 //	re := regexp.MustCompile(`go+`)
 //	v := str.Of("go gopher gooo").MatchAll(re)
-//	str.Dump(v)
+//	println(v)
 //	// #[][]string [[go] [gooo]]
 func (s String) MatchAll(pattern *regexp.Regexp) [][]string {
 	if pattern == nil {

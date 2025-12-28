@@ -17,7 +17,7 @@ var smallWords = map[string]struct{}{
 // Example: headline
 //
 //	v := str.Of("emailNotification_sent").Headline().String()
-//	str.Dump(v)
+//	println(v)
 //	// #string Email Notification Sent
 func (s String) Headline() String {
 	words := splitWordsRunes(s.s)

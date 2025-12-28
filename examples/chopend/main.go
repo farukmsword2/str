@@ -10,6 +10,6 @@ func main() {
 
 	// Example: chop end
 	v := str.Of("file.txt").ChopEnd(".txt", ".md").String()
-	str.Dump(v)
+	println(v)
 	// #string file
 }

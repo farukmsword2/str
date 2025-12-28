@@ -10,6 +10,6 @@ func main() {
 
 	// Example: starts with any
 	v := str.Of("gopher").StartsWith("go", "rust")
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

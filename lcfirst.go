@@ -8,7 +8,7 @@ import "unicode"
 // Example: lowercase first rune
 //
 //	v := str.Of("Gopher")
-//	str.Dump(v)
+//	fmt.Println(v)
 //	// #string gopher
 func (s String) LcFirst() String {
 	runes := []rune(s.s)

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: prepend text
 	v := str.Of("World").Prepend("Hello ", "Go ").String()
-	str.Dump(v)
+	println(v)
 	// #string Hello Go World
 }

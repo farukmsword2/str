@@ -6,7 +6,7 @@ package str
 // Example: first rune index
 //
 //	v := str.Of("héllo").Index("llo")
-//	str.Dump(v)
+//	println(v)
 //	// #int 2
 func (s String) Index(sub string) int {
 	return runeIndex(s.s, sub, false)
@@ -18,7 +18,7 @@ func (s String) Index(sub string) int {
 // Example: last rune index
 //
 //	v := str.Of("go gophers go").LastIndex("go")
-//	str.Dump(v)
+//	println(v)
 //	// #int 10
 func (s String) LastIndex(sub string) int {
 	return runeIndex(s.s, sub, true)
@@ -31,7 +31,7 @@ func (s String) LastIndex(sub string) int {
 // Example: rune-safe slice
 //
 //	v := str.Of("naïve café").Slice(3, 7).String()
-//	str.Dump(v)
+//	println(v)
 //	// #string e ca
 func (s String) Slice(start, end int) String {
 	runes := []rune(s.s)

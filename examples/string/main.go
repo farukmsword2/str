@@ -10,6 +10,6 @@ func main() {
 
 	// Example: unwrap to plain string
 	v := str.Of("go").String()
-	str.Dump(v)
+	println(v)
 	// #string go
 }

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: doesn't end with any
 	v := str.Of("gopher")
-	str.Dump(v.DoesntEndWith("her", "cat"))
+	println(v.DoesntEndWith("her", "cat"))
 	// #bool false
 }

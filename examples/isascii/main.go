@@ -10,6 +10,6 @@ func main() {
 
 	// Example: ASCII check
 	v := str.Of("gopher").IsASCII()
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

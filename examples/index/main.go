@@ -10,6 +10,6 @@ func main() {
 
 	// Example: first rune index
 	v := str.Of("héllo").Index("llo")
-	str.Dump(v)
+	println(v)
 	// #int 2
 }

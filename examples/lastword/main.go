@@ -10,6 +10,6 @@ func main() {
 
 	// Example: last word
 	v := str.Of("Hello world").LastWord().String()
-	str.Dump(v)
+	println(v)
 	// #string world
 }

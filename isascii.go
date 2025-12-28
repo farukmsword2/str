@@ -6,7 +6,7 @@ package str
 // Example: ASCII check
 //
 //	v := str.Of("gopher").IsASCII()
-//	str.Dump(v)
+//	println(v)
 //	// #bool true
 func (s String) IsASCII() bool {
 	for _, r := range s.s {

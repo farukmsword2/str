@@ -11,6 +11,6 @@ func main() {
 
 	// Example: slice before marker
 	v := str.Of("gopher::go").Before("::").String()
-	str.Dump(v)
+	println(v)
 	// #string gopher
 }

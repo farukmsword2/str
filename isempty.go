@@ -8,7 +8,7 @@ import "unicode"
 // Example: empty check
 //
 //	v := str.Of("").IsEmpty()
-//	str.Dump(v)
+//	println(v)
 //	// #bool true
 func (s String) IsEmpty() bool {
 	return len(s.s) == 0
@@ -20,7 +20,7 @@ func (s String) IsEmpty() bool {
 // Example: blank check
 //
 //	v := str.Of("  \\t\\n")
-//	str.Dump(v.IsBlank())
+//	println(v.IsBlank())
 //	// #bool true
 func (s String) IsBlank() bool {
 	for _, r := range s.s {

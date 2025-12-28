@@ -14,6 +14,6 @@ func main() {
 	// Example: regex match
 	re := regexp.MustCompile(`g(o+)`)
 	v := str.Of("gooo").Match(re)
-	str.Dump(v)
+	println(v)
 	// #[]string [gooo ooo]
 }

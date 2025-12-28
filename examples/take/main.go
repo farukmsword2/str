@@ -10,6 +10,6 @@ func main() {
 
 	// Example: take head
 	v := str.Of("gophers").Take(3).String()
-	str.Dump(v)
+	println(v)
 	// #string gop
 }

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: limit with suffix
 	v := str.Of("Perfectly balanced, as all things should be.").Limit(10, "...").String()
-	str.Dump(v)
+	println(v)
 	// #string Perfectly...
 }

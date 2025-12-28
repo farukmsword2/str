@@ -12,6 +12,6 @@ func main() {
 
 	// Example: contains all (case-insensitive)
 	v := str.Of("Go means gophers").ContainsAllFold("go", "GOPHER")
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

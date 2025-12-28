@@ -10,6 +10,6 @@ func main() {
 
 	// Example: replace suffix
 	v := str.Of("file.old").ReplaceEnd(".old", ".new").String()
-	str.Dump(v)
+	println(v)
 	// #string file.new
 }

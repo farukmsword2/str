@@ -10,6 +10,6 @@ func main() {
 
 	// Example: replace first (case-insensitive)
 	v := str.Of("go gopher GO").ReplaceFirstFold("GO", "Go").String()
-	str.Dump(v)
+	println(v)
 	// #string Go gopher GO
 }

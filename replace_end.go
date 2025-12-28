@@ -8,7 +8,7 @@ import "strings"
 // Example: replace suffix
 //
 //	v := str.Of("file.old").ReplaceEnd(".old", ".new").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string file.new
 func (s String) ReplaceEnd(old, repl string) String {
 	if old == "" || !strings.HasSuffix(s.s, old) {

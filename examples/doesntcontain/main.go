@@ -11,6 +11,6 @@ func main() {
 
 	// Example: doesn't contain any
 	v := str.Of("gophers are great")
-	str.Dump(v.DoesntContain("rust", "beam"))
+	println(v.DoesntContain("rust", "beam"))
 	// #bool true
 }

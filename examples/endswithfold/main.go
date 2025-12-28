@@ -10,6 +10,6 @@ func main() {
 
 	// Example: ends with (case-insensitive)
 	v := str.Of("gopher").EndsWithFold("HER")
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

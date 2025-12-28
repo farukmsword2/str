@@ -10,6 +10,6 @@ func main() {
 
 	// Example: append text
 	v := str.Of("Go").Append("Forj", "!").String()
-	str.Dump(v)
+	println(v)
 	// #string GoForj!
 }

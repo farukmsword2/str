@@ -8,7 +8,7 @@ import "strings"
 // Example: replace prefix
 //
 //	v := str.Of("prefix-value").ReplaceStart("prefix-", "new-").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string new-value
 func (s String) ReplaceStart(old, repl string) String {
 	if old == "" || !strings.HasPrefix(s.s, old) {

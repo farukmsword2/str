@@ -10,6 +10,6 @@ func main() {
 
 	// Example: uppercase text
 	v := str.Of("GoLang").ToUpper().String()
-	str.Dump(v)
+	println(v)
 	// #string GOLANG
 }

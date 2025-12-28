@@ -10,6 +10,6 @@ func main() {
 
 	// Example: blank check
 	v := str.Of("  \\t\\n")
-	str.Dump(v.IsBlank())
+	println(v.IsBlank())
 	// #bool true
 }

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: count words
 	v := str.Of("Hello, world!").WordCount()
-	str.Dump(v)
+	println(v)
 	// #int 2
 }

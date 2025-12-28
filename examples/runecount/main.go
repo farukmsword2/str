@@ -10,6 +10,6 @@ func main() {
 
 	// Example: alias for Len
 	v := str.Of("naïve").RuneCount()
-	str.Dump(v)
+	println(v)
 	// #int 5
 }

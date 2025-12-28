@@ -10,6 +10,6 @@ func main() {
 
 	// Example: trim whitespace
 	v := str.Of("  GoForj  ").Trim("").String()
-	str.Dump(v)
+	println(v)
 	// #string GoForj
 }

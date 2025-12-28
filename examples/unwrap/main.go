@@ -10,6 +10,6 @@ func main() {
 
 	// Example: unwrap string
 	v := str.Of(`"GoForj"`).Unwrap(`"`, `"`).String()
-	str.Dump(v)
+	println(v)
 	// #string GoForj
 }

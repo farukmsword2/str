@@ -10,6 +10,6 @@ func main() {
 
 	// Example: join words
 	v := str.Of("unused").Join([]string{"foo", "bar"}, "-").String()
-	str.Dump(v)
+	println(v)
 	// #string foo-bar
 }

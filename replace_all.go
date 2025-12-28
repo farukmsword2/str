@@ -9,7 +9,7 @@ import "strings"
 // Example: replace all occurrences
 //
 //	v := str.Of("go gopher go").ReplaceAll("go", "Go").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string Go Gopher Go
 func (s String) ReplaceAll(old, new string) String {
 	if old == "" {

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: reverse
 	v := str.Of("naïve").Reverse().String()
-	str.Dump(v)
+	println(v)
 	// #string evïan
 }

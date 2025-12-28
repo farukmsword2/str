@@ -12,6 +12,6 @@ func main() {
 
 	// Example: mask email
 	v := str.Of("gopher@example.com").Mask('*', 3, 4).String()
-	str.Dump(v)
+	println(v)
 	// #string gop***********.com
 }

@@ -14,6 +14,6 @@ func main() {
 	// Example: regex match all
 	re := regexp.MustCompile(`go+`)
 	v := str.Of("go gopher gooo").MatchAll(re)
-	str.Dump(v)
+	println(v)
 	// #[][]string [[go] [gooo]]
 }

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: ends with any
 	v := str.Of("gopher").EndsWith("her", "cat")
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

@@ -11,6 +11,6 @@ func main() {
 
 	// Example: build slug
 	v := str.Of("Go Forj Toolkit").Slug("-").String()
-	str.Dump(v)
+	println(v)
 	// #string go-forj-toolkit
 }

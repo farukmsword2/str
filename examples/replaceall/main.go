@@ -11,6 +11,6 @@ func main() {
 
 	// Example: replace all occurrences
 	v := str.Of("go gopher go").ReplaceAll("go", "Go").String()
-	str.Dump(v)
+	println(v)
 	// #string Go Gopher Go
 }

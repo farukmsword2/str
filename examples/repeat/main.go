@@ -10,6 +10,6 @@ func main() {
 
 	// Example: repeat string
 	v := str.Of("go").Repeat(3).String()
-	str.Dump(v)
+	println(v)
 	// #string gogogo
 }

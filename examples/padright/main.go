@@ -10,6 +10,6 @@ func main() {
 
 	// Example: pad right
 	v := str.Of("go").PadRight(5, ".").String()
-	str.Dump(v)
+	println(v)
 	// #string go...
 }

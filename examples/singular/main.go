@@ -10,6 +10,6 @@ func main() {
 
 	// Example: singularize word
 	v := str.Of("people").Singular().String()
-	str.Dump(v)
+	println(v)
 	// #string person
 }

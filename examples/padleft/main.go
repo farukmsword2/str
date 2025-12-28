@@ -10,6 +10,6 @@ func main() {
 
 	// Example: pad left
 	v := str.Of("go").PadLeft(5, " ").String()
-	str.Dump(v)
+	println(v)
 	// #string \u00a0\u00a0\u00a0go
 }

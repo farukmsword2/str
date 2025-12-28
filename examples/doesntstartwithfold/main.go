@@ -10,6 +10,6 @@ func main() {
 
 	// Example: doesn't start with (case-insensitive)
 	v := str.Of("gopher")
-	str.Dump(v.DoesntStartWithFold("GO"))
+	println(v.DoesntStartWithFold("GO"))
 	// #bool false
 }

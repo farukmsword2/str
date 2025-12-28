@@ -10,6 +10,6 @@ func main() {
 
 	// Example: first word
 	v := str.Of("Hello world")
-	str.Dump(v.FirstWord().String())
+	println(v.FirstWord().String())
 	// #string Hello
 }

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: ensure prefix
 	v := str.Of("path/to").EnsurePrefix("/").String()
-	str.Dump(v)
+	println(v)
 	// #string /path/to
 }

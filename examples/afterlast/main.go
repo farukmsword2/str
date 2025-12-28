@@ -11,6 +11,6 @@ func main() {
 
 	// Example: slice after last separator
 	v := str.Of("pkg/path/file.txt").AfterLast("/").String()
-	str.Dump(v)
+	println(v)
 	// #string file.txt
 }

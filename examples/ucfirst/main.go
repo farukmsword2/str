@@ -10,6 +10,6 @@ func main() {
 
 	// Example: uppercase first rune
 	v := str.Of("gopher").UcFirst().String()
-	str.Dump(v)
+	println(v)
 	// #string Gopher
 }

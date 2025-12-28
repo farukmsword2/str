@@ -9,7 +9,7 @@ import "regexp"
 //
 //	re := regexp.MustCompile(`g(o+)`)
 //	v := str.Of("gooo").Match(re)
-//	str.Dump(v)
+//	println(v)
 //	// #[]string [gooo ooo]
 func (s String) Match(pattern *regexp.Regexp) []string {
 	if pattern == nil {

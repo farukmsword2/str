@@ -10,6 +10,6 @@ func main() {
 
 	// Example: split words
 	v := str.Of("one, two, three").SplitWords()
-	str.Dump(v)
+	println(v)
 	// #[]string [one two three]
 }

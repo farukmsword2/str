@@ -8,7 +8,7 @@ import "unicode"
 // Example: split on upper-case boundaries
 //
 //	v := str.Of("HTTPRequestID").UcSplit()
-//	str.Dump(v)
+//	println(v)
 //	// #[]string [HTTP Request ID]
 func (s String) UcSplit() []string {
 	runes := []rune(s.s)

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: trim right
 	v := str.Of("  GoForj  ").TrimRight("").String()
-	str.Dump(v)
+	println(v)
 	// #string   GoForj
 }

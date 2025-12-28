@@ -10,6 +10,6 @@ func main() {
 
 	// Example: base64 encode
 	v := str.Of("gopher").ToBase64().String()
-	str.Dump(v)
+	println(v)
 	// #string Z29waGVy
 }

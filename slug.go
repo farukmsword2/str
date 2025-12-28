@@ -12,7 +12,7 @@ import (
 // Example: build slug
 //
 //	v := str.Of("Go Forj Toolkit").Slug("-").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string go-forj-toolkit
 func (s String) Slug(sep string) String {
 	if sep == "" {

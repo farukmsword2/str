@@ -10,6 +10,6 @@ func main() {
 
 	// Example: snake case
 	v := str.Of("fooBar baz").Snake("_").String()
-	str.Dump(v)
+	println(v)
 	// #string foo_bar_baz
 }

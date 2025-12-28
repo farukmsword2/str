@@ -11,6 +11,6 @@ func main() {
 
 	// Example: doesn't contain (case-insensitive)
 	v := str.Of("gophers are great")
-	str.Dump(v.DoesntContainFold("GOPHER"))
+	println(v.DoesntContainFold("GOPHER"))
 	// #bool false
 }

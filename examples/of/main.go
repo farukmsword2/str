@@ -10,6 +10,6 @@ func main() {
 
 	// Example: wrap raw string
 	v := str.Of("gopher")
-	str.Dump(v.String())
+	println(v.String())
 	// #string gopher
 }

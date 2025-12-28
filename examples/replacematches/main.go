@@ -14,6 +14,6 @@ func main() {
 	// Example: regex replace with callback
 	re := regexp.MustCompile(`\d+`)
 	v := str.Of("Hello 123 World").ReplaceMatches(re, func(m string) string { return "[" + m + "]" }).String()
-	str.Dump(v)
+	println(v)
 	// #string Hello [123] World
 }

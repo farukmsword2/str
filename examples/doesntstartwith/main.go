@@ -10,6 +10,6 @@ func main() {
 
 	// Example: doesn't start with any
 	v := str.Of("gopher")
-	str.Dump(v.DoesntStartWith("go", "rust"))
+	println(v.DoesntStartWith("go", "rust"))
 	// #bool false
 }

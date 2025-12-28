@@ -10,6 +10,6 @@ func main() {
 
 	// Example: replace range
 	v := str.Of("naïve café").SubstrReplace("i", 2, 3).String()
-	str.Dump(v)
+	println(v)
 	// #string naive café
 }

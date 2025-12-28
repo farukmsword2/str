@@ -10,6 +10,6 @@ func main() {
 
 	// Example: title map runes
 	v := str.Of("ß").ToTitle().String()
-	str.Dump(v)
+	println(v)
 	// #string SS
 }

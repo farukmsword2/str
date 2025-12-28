@@ -10,6 +10,6 @@ func main() {
 
 	// Example: ensure suffix
 	v := str.Of("path/to").EnsureSuffix("/").String()
-	str.Dump(v)
+	println(v)
 	// #string path/to/
 }

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: append newline
 	v := str.Of("hello").NewLine().Append("world").String()
-	str.Dump(v)
+	println(v)
 	// #string hello\nworld
 }

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: count runes instead of bytes
 	v := str.Of("gophers 🦫").Len()
-	str.Dump(v)
+	println(v)
 	// #int 9
 }

@@ -11,6 +11,6 @@ func main() {
 
 	// Example: collapse spaces
 	v := str.Of("The   Go   Playground").Deduplicate(' ').String()
-	str.Dump(v)
+	println(v)
 	// #string The Go Playground
 }

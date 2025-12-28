@@ -10,6 +10,6 @@ func main() {
 
 	// Example: last rune index
 	v := str.Of("go gophers go").LastIndex("go")
-	str.Dump(v)
+	println(v)
 	// #int 10
 }

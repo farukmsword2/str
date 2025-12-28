@@ -10,6 +10,6 @@ func main() {
 
 	// Example: normalize interior space
 	v := str.Of("  go   forj  ").NormalizeSpace().String()
-	str.Dump(v)
+	println(v)
 	// #string  go forj 
 }

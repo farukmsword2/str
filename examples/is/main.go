@@ -11,6 +11,6 @@ func main() {
 
 	// Example: wildcard match
 	v := str.Of("foo/bar").Is("foo/*")
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

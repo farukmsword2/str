@@ -10,6 +10,6 @@ func main() {
 
 	// Example: take tail
 	v := str.Of("gophers").TakeLast(4).String()
-	str.Dump(v)
+	println(v)
 	// #string hers
 }

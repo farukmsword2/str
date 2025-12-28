@@ -10,6 +10,6 @@ func main() {
 
 	// Example: camel case
 	v := str.Of("foo_bar baz").Camel().String()
-	str.Dump(v)
+	println(v)
 	// #string fooBarBaz
 }

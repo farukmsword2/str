@@ -10,6 +10,6 @@ func main() {
 
 	// Example: exact match
 	v := str.Of("gopher").Equals("gopher")
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

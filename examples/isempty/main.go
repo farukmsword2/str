@@ -10,6 +10,6 @@ func main() {
 
 	// Example: empty check
 	v := str.Of("").IsEmpty()
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

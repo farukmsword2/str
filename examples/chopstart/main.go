@@ -10,6 +10,6 @@ func main() {
 
 	// Example: chop start
 	v := str.Of("https://goforj.dev").ChopStart("https://", "http://").String()
-	str.Dump(v)
+	println(v)
 	// #string goforj.dev
 }

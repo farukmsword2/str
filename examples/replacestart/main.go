@@ -10,6 +10,6 @@ func main() {
 
 	// Example: replace prefix
 	v := str.Of("prefix-value").ReplaceStart("prefix-", "new-").String()
-	str.Dump(v)
+	println(v)
 	// #string new-value
 }

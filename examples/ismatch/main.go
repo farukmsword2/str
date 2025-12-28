@@ -13,6 +13,6 @@ func main() {
 
 	// Example: regex match
 	v := str.Of("abc123").IsMatch(regexp.MustCompile(`\d+`))
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

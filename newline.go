@@ -6,7 +6,7 @@ package str
 // Example: append newline
 //
 //	v := str.Of("hello").NewLine().Append("world").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string hello\nworld
 func (s String) NewLine() String {
 	return s.Append("\n")

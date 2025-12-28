@@ -10,6 +10,6 @@ func main() {
 
 	// Example: case-insensitive match
 	v := str.Of("gopher").EqualsFold("GOPHER")
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

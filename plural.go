@@ -12,7 +12,7 @@ import (
 // Example: pluralize word
 //
 //	v := str.Of("city").Plural().String()
-//	str.Dump(v)
+//	println(v)
 //	// #string cities
 func (s String) Plural() String {
 	if s.s == "" {
@@ -27,7 +27,7 @@ func (s String) Plural() String {
 // Example: singularize word
 //
 //	v := str.Of("people").Singular().String()
-//	str.Dump(v)
+//	println(v)
 //	// #string person
 func (s String) Singular() String {
 	if s.s == "" {
@@ -59,55 +59,55 @@ var uncountables = map[string]struct{}{
 
 var irregularSingular = map[string]string{
 	"analysis": "analyses",
-	"axis":   "axes",
-	"basis":  "bases",
-	"cactus": "cacti",
-	"child":  "children",
-	"crisis": "crises",
-	"datum":  "data",
-	"echo":   "echoes",
-	"foot":   "feet",
-	"goose":  "geese",
-	"hero":   "heroes",
-	"louse":  "lice",
-	"mouse":  "mice",
-	"ox":     "oxen",
-	"man":    "men",
-	"person": "people",
-	"quiz":   "quizzes",
-	"thesis": "theses",
-	"tooth":  "teeth",
-	"torpedo": "torpedoes",
-	"woman":  "women",
+	"axis":     "axes",
+	"basis":    "bases",
+	"cactus":   "cacti",
+	"child":    "children",
+	"crisis":   "crises",
+	"datum":    "data",
+	"echo":     "echoes",
+	"foot":     "feet",
+	"goose":    "geese",
+	"hero":     "heroes",
+	"louse":    "lice",
+	"mouse":    "mice",
+	"ox":       "oxen",
+	"man":      "men",
+	"person":   "people",
+	"quiz":     "quizzes",
+	"thesis":   "theses",
+	"tooth":    "teeth",
+	"torpedo":  "torpedoes",
+	"woman":    "women",
 }
 
 var irregularPlural = map[string]string{
-	"analyses": "analysis",
-	"axes":     "axis",
-	"bases":    "basis",
-	"cacti":    "cactus",
-	"children": "child",
-	"crises":   "crisis",
-	"data":     "datum",
-	"echoes":   "echo",
-	"feet":     "foot",
-	"geese":    "goose",
-	"heroes":   "hero",
-	"lice":     "louse",
-	"dies":     "die",
-	"lies":     "lie",
-	"men":      "man",
-	"mice":     "mouse",
-	"oxen":     "ox",
-	"pies":     "pie",
-	"people":   "person",
-	"quizzes":  "quiz",
-	"teeth":    "tooth",
-	"theses":   "thesis",
-	"ties":     "tie",
+	"analyses":  "analysis",
+	"axes":      "axis",
+	"bases":     "basis",
+	"cacti":     "cactus",
+	"children":  "child",
+	"crises":    "crisis",
+	"data":      "datum",
+	"echoes":    "echo",
+	"feet":      "foot",
+	"geese":     "goose",
+	"heroes":    "hero",
+	"lice":      "louse",
+	"dies":      "die",
+	"lies":      "lie",
+	"men":       "man",
+	"mice":      "mouse",
+	"oxen":      "ox",
+	"pies":      "pie",
+	"people":    "person",
+	"quizzes":   "quiz",
+	"teeth":     "tooth",
+	"theses":    "thesis",
+	"ties":      "tie",
 	"torpedoes": "torpedo",
-	"vies":     "vie",
-	"women":    "woman",
+	"vies":      "vie",
+	"women":     "woman",
 }
 
 var fToVesExceptions = map[string]struct{}{

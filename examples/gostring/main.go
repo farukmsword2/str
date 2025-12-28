@@ -13,6 +13,6 @@ func main() {
 
 	// Example: fmt %#v uses GoString
 	v := str.Of("go")
-	str.Dump(fmt.Sprintf("%#v", v))
+	println(fmt.Sprintf("%#v", v))
 	// #string go
 }

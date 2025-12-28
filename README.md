@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/github/v/tag/goforj/str?label=version&sort=semver" alt="Latest tag">
     <a href="https://codecov.io/gh/goforj/str" ><img src="https://codecov.io/github/goforj/str/graph/badge.svg?token=9KT46ZORP3"/></a>
 <!-- test-count:embed:start -->
-    <img src="https://img.shields.io/badge/tests-185-brightgreen" alt="Tests">
+    <img src="https://img.shields.io/badge/tests-183-brightgreen" alt="Tests">
 <!-- test-count:embed:end -->
     <a href="https://goreportcard.com/report/github.com/goforj/str"><img src="https://goreportcard.com/badge/github.com/goforj/str" alt="Go Report Card"></a>
 </p>
@@ -49,7 +49,6 @@ This guarantees all examples are valid, up-to-date, and remain functional as the
 | **Comparison** | [Equals](#equals) [EqualsFold](#equalsfold) |
 | **Compose** | [Append](#append) [NewLine](#newline) [Prepend](#prepend) |
 | **Constructor** | [Of](#of) |
-| **Debug** | [Dump](#dump) |
 | **Encoding** | [FromBase64](#frombase64) [ToBase64](#tobase64) |
 | **Fluent** | [GoString](#gostring) [String](#string) |
 | **Length** | [Len](#len) [RuneCount](#runecount) |
@@ -75,7 +74,7 @@ ChopEnd removes the first matching suffix if present.
 
 ```go
 v := str.Of("file.txt").ChopEnd(".txt", ".md").String()
-str.Dump(v)
+println(v)
 // #string file
 ```
 
@@ -85,7 +84,7 @@ ChopStart removes the first matching prefix if present.
 
 ```go
 v := str.Of("https://goforj.dev").ChopStart("https://", "http://").String()
-str.Dump(v)
+println(v)
 // #string goforj.dev
 ```
 
@@ -95,7 +94,7 @@ EnsurePrefix ensures the string starts with prefix, adding it if missing.
 
 ```go
 v := str.Of("path/to").EnsurePrefix("/").String()
-str.Dump(v)
+println(v)
 // #string /path/to
 ```
 
@@ -105,7 +104,7 @@ EnsureSuffix ensures the string ends with suffix, adding it if missing.
 
 ```go
 v := str.Of("path/to").EnsureSuffix("/").String()
-str.Dump(v)
+println(v)
 // #string path/to/
 ```
 
@@ -115,7 +114,7 @@ Unwrap removes matching before and after strings if present.
 
 ```go
 v := str.Of(`"GoForj"`).Unwrap(`"`, `"`).String()
-str.Dump(v)
+println(v)
 // #string GoForj
 ```
 
@@ -125,7 +124,7 @@ Wrap surrounds the string with before and after (after defaults to before).
 
 ```go
 v := str.Of("GoForj").Wrap(`"`, "").String()
-str.Dump(v)
+println(v)
 // #string "GoForj"
 ```
 
@@ -137,7 +136,7 @@ Camel converts the string to camelCase.
 
 ```go
 v := str.Of("foo_bar baz").Camel().String()
-str.Dump(v)
+println(v)
 // #string fooBarBaz
 ```
 
@@ -148,7 +147,7 @@ splits on case/underscores/dashes/whitespace, title-cases words, and lowercases 
 
 ```go
 v := str.Of("emailNotification_sent").Headline().String()
-str.Dump(v)
+println(v)
 // #string Email Notification Sent
 ```
 
@@ -158,7 +157,7 @@ Kebab converts the string to kebab-case.
 
 ```go
 v := str.Of("fooBar baz").Kebab().String()
-str.Dump(v)
+println(v)
 // #string foo-bar-baz
 ```
 
@@ -168,7 +167,7 @@ LcFirst returns the string with the first rune lower-cased.
 
 ```go
 v := str.Of("Gopher")
-str.Dump(v)
+fmt.Println(v)
 // #string gopher
 ```
 
@@ -177,8 +176,8 @@ str.Dump(v)
 Pascal converts the string to PascalCase.
 
 ```go
-v := str.Of("foo_bar baz")
-str.Dump(v)
+v := str.Of("foo_bar baz").Pascal().String()
+fmt.Println(v)
 // #string FooBarBaz
 ```
 
@@ -188,7 +187,7 @@ Snake converts the string to snake_case using the provided separator (default "_
 
 ```go
 v := str.Of("fooBar baz").Snake("_").String()
-str.Dump(v)
+println(v)
 // #string foo_bar_baz
 ```
 
@@ -198,7 +197,7 @@ Title converts the string to title case (first letter of each word upper, rest l
 
 ```go
 v := str.Of("a nice title uses the correct case").Title().String()
-str.Dump(v)
+println(v)
 // #string A Nice Title Uses The Correct Case
 ```
 
@@ -208,7 +207,7 @@ ToLower returns a lowercase copy of the string using Unicode rules.
 
 ```go
 v := str.Of("GoLang").ToLower().String()
-str.Dump(v)
+println(v)
 // #string golang
 ```
 
@@ -218,7 +217,7 @@ ToTitle returns a title-cased copy where all letters are mapped using Unicode ti
 
 ```go
 v := str.Of("ß").ToTitle().String()
-str.Dump(v)
+println(v)
 // #string SS
 ```
 
@@ -228,7 +227,7 @@ ToUpper returns an uppercase copy of the string using Unicode rules.
 
 ```go
 v := str.Of("GoLang").ToUpper().String()
-str.Dump(v)
+println(v)
 // #string GOLANG
 ```
 
@@ -238,7 +237,7 @@ UcFirst returns the string with the first rune upper-cased.
 
 ```go
 v := str.Of("gopher").UcFirst().String()
-str.Dump(v)
+println(v)
 // #string Gopher
 ```
 
@@ -249,7 +248,7 @@ Words are sequences of letters/digits.
 
 ```go
 v := str.Of("hello WORLD").UcWords().String()
-str.Dump(v)
+println(v)
 // #string Hello WORLD
 ```
 
@@ -261,7 +260,7 @@ IsASCII reports whether the string consists solely of 7-bit ASCII runes.
 
 ```go
 v := str.Of("gopher").IsASCII()
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -271,7 +270,7 @@ IsBlank reports whether the string contains only Unicode whitespace.
 
 ```go
 v := str.Of("  \\t\\n")
-str.Dump(v.IsBlank())
+println(v.IsBlank())
 // #bool true
 ```
 
@@ -281,7 +280,7 @@ IsEmpty reports whether the string has zero length.
 
 ```go
 v := str.Of("").IsEmpty()
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -294,7 +293,7 @@ If char is zero, space is used.
 
 ```go
 v := str.Of("The   Go   Playground").Deduplicate(' ').String()
-str.Dump(v)
+println(v)
 // #string The Go Playground
 ```
 
@@ -304,7 +303,7 @@ NormalizeNewlines replaces CRLF, CR, and Unicode separators with \n.
 
 ```go
 v := str.Of("a\\r\\nb\\u2028c").NormalizeNewlines().String()
-str.Dump(v)
+println(v)
 // #string a\nb\nc
 ```
 
@@ -314,7 +313,7 @@ NormalizeSpace collapses whitespace runs to single spaces without trimming ends.
 
 ```go
 v := str.Of("  go   forj  ").NormalizeSpace().String()
-str.Dump(v)
+println(v)
 // #string  go forj
 ```
 
@@ -324,7 +323,7 @@ Squish trims leading/trailing whitespace and collapses internal whitespace to si
 
 ```go
 v := str.Of("   go   forj  ").Squish().String()
-str.Dump(v)
+println(v)
 // #string go forj
 ```
 
@@ -334,7 +333,7 @@ Trim trims leading and trailing characters. If cutset is empty, trims Unicode wh
 
 ```go
 v := str.Of("  GoForj  ").Trim("").String()
-str.Dump(v)
+println(v)
 // #string GoForj
 ```
 
@@ -344,7 +343,7 @@ TrimLeft trims leading characters. If cutset is empty, trims Unicode whitespace.
 
 ```go
 v := str.Of("  GoForj  ").TrimLeft("").String()
-str.Dump(v)
+println(v)
 // #string GoForj
 ```
 
@@ -354,7 +353,7 @@ TrimRight trims trailing characters. If cutset is empty, trims Unicode whitespac
 
 ```go
 v := str.Of("  GoForj  ").TrimRight("").String()
-str.Dump(v)
+println(v)
 // #string   GoForj
 ```
 
@@ -366,7 +365,7 @@ Equals reports whether the string exactly matches other (case-sensitive).
 
 ```go
 v := str.Of("gopher").Equals("gopher")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -376,7 +375,7 @@ EqualsFold reports whether the string matches other using Unicode case folding.
 
 ```go
 v := str.Of("gopher").EqualsFold("GOPHER")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -388,7 +387,7 @@ Append concatenates the provided parts to the end of the string.
 
 ```go
 v := str.Of("Go").Append("Forj", "!").String()
-str.Dump(v)
+println(v)
 // #string GoForj!
 ```
 
@@ -398,7 +397,7 @@ NewLine appends a newline character to the string.
 
 ```go
 v := str.Of("hello").NewLine().Append("world").String()
-str.Dump(v)
+println(v)
 // #string hello\nworld
 ```
 
@@ -408,7 +407,7 @@ Prepend concatenates the provided parts to the beginning of the string.
 
 ```go
 v := str.Of("World").Prepend("Hello ", "Go ").String()
-str.Dump(v)
+println(v)
 // #string Hello Go World
 ```
 
@@ -420,21 +419,8 @@ Of wraps a raw string with fluent helpers.
 
 ```go
 v := str.Of("gopher")
-str.Dump(v.String())
+println(v.String())
 // #string gopher
-```
-
-## Debug
-
-### <a id="dump"></a>Dump
-
-Dump is a thin alias for godump.Dump, provided to keep examples concise
-and readable in documentation and code snippets.
-
-```go
-str.Dump("go", 42)
-// #string go
-// #int 42
 ```
 
 ## Encoding
@@ -445,7 +431,7 @@ FromBase64 decodes a standard Base64 string.
 
 ```go
 v, err := str.Of("Z29waGVy").FromBase64()
-str.Dump(v.String(), err)
+println(v.String(), err)
 // #string gopher
 // #error <nil>
 ```
@@ -456,7 +442,7 @@ ToBase64 encodes the string using standard Base64.
 
 ```go
 v := str.Of("gopher").ToBase64().String()
-str.Dump(v)
+println(v)
 // #string Z29waGVy
 ```
 
@@ -468,7 +454,7 @@ GoString allows %#v formatting to print the raw string.
 
 ```go
 v := str.Of("go")
-str.Dump(fmt.Sprintf("%#v", v))
+println(fmt.Sprintf("%#v", v))
 // #string go
 ```
 
@@ -478,7 +464,7 @@ String returns the underlying raw string value.
 
 ```go
 v := str.Of("go").String()
-str.Dump(v)
+println(v)
 // #string go
 ```
 
@@ -490,7 +476,7 @@ Len returns the number of runes in the string.
 
 ```go
 v := str.Of("gophers 🦫").Len()
-str.Dump(v)
+println(v)
 // #int 9
 ```
 
@@ -500,7 +486,7 @@ RuneCount is an alias for Len to make intent explicit in mixed codebases.
 
 ```go
 v := str.Of("naïve").RuneCount()
-str.Dump(v)
+println(v)
 // #int 5
 ```
 
@@ -514,7 +500,7 @@ If the reveal counts cover the whole string, the original string is returned.
 
 ```go
 v := str.Of("gopher@example.com").Mask('*', 3, 4).String()
-str.Dump(v)
+println(v)
 // #string gop***********.com
 ```
 
@@ -527,7 +513,7 @@ Patterns use '*' as a wildcard. Case-sensitive.
 
 ```go
 v := str.Of("foo/bar").Is("foo/*")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -537,7 +523,7 @@ IsMatch reports whether the string matches the provided regular expression.
 
 ```go
 v := str.Of("abc123").IsMatch(regexp.MustCompile(`\d+`))
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -548,7 +534,7 @@ Match returns the first match and submatches for the pattern.
 ```go
 re := regexp.MustCompile(`g(o+)`)
 v := str.Of("gooo").Match(re)
-str.Dump(v)
+println(v)
 // #[]string [gooo ooo]
 ```
 
@@ -559,7 +545,7 @@ MatchAll returns all matches and submatches for the pattern.
 ```go
 re := regexp.MustCompile(`go+`)
 v := str.Of("go gopher gooo").MatchAll(re)
-str.Dump(v)
+println(v)
 // #[][]string [[go] [gooo]]
 ```
 
@@ -571,7 +557,7 @@ PadBoth pads the string on both sides to reach length runes using pad (defaults 
 
 ```go
 v := str.Of("go").PadBoth(6, "-").String()
-str.Dump(v)
+println(v)
 // #string --go--
 ```
 
@@ -581,7 +567,7 @@ PadLeft pads the string on the left to reach length runes using pad (defaults to
 
 ```go
 v := str.Of("go").PadLeft(5, " ").String()
-str.Dump(v)
+println(v)
 // #string \u00a0\u00a0\u00a0go
 ```
 
@@ -591,7 +577,7 @@ PadRight pads the string on the right to reach length runes using pad (defaults 
 
 ```go
 v := str.Of("go").PadRight(5, ".").String()
-str.Dump(v)
+println(v)
 // #string go...
 ```
 
@@ -603,7 +589,7 @@ Plural returns a best-effort English plural form of the last word.
 
 ```go
 v := str.Of("city").Plural().String()
-str.Dump(v)
+println(v)
 // #string cities
 ```
 
@@ -613,7 +599,7 @@ Singular returns a best-effort English singular form of the last word.
 
 ```go
 v := str.Of("people").Singular().String()
-str.Dump(v)
+println(v)
 // #string person
 ```
 
@@ -625,7 +611,7 @@ Remove deletes all occurrences of provided substrings.
 
 ```go
 v := str.Of("The Go Toolkit").Remove("Go ").String()
-str.Dump(v)
+println(v)
 // #string The Toolkit
 ```
 
@@ -636,7 +622,7 @@ If old is empty, the original string is returned unchanged.
 
 ```go
 v := str.Of("go gopher go").ReplaceAll("go", "Go").String()
-str.Dump(v)
+println(v)
 // #string Go Gopher Go
 ```
 
@@ -646,7 +632,7 @@ ReplaceArray replaces all occurrences of each old in olds with repl.
 
 ```go
 v := str.Of("The---Go---Toolkit")
-str.Dump(v.ReplaceArray([]string{"---"}, "-").String())
+println(v.ReplaceArray([]string{"---"}, "-").String())
 // #string The-Go-Toolkit
 ```
 
@@ -656,7 +642,7 @@ ReplaceEnd replaces old with repl at the end of the string, if present.
 
 ```go
 v := str.Of("file.old").ReplaceEnd(".old", ".new").String()
-str.Dump(v)
+println(v)
 // #string file.new
 ```
 
@@ -666,7 +652,7 @@ ReplaceFirst replaces the first occurrence of old with repl.
 
 ```go
 v := str.Of("gopher gopher").ReplaceFirst("gopher", "go").String()
-str.Dump(v)
+println(v)
 // #string go gopher
 ```
 
@@ -676,7 +662,7 @@ ReplaceFirstFold replaces the first occurrence of old with repl using Unicode ca
 
 ```go
 v := str.Of("go gopher GO").ReplaceFirstFold("GO", "Go").String()
-str.Dump(v)
+println(v)
 // #string Go gopher GO
 ```
 
@@ -686,7 +672,7 @@ ReplaceFold replaces all occurrences of old with repl using Unicode case folding
 
 ```go
 v := str.Of("go gopher GO").ReplaceFold("GO", "Go").String()
-str.Dump(v)
+println(v)
 // #string Go Gopher Go
 ```
 
@@ -696,7 +682,7 @@ ReplaceLast replaces the last occurrence of old with repl.
 
 ```go
 v := str.Of("gopher gopher").ReplaceLast("gopher", "go").String()
-str.Dump(v)
+println(v)
 // #string gopher go
 ```
 
@@ -706,7 +692,7 @@ ReplaceLastFold replaces the last occurrence of old with repl using Unicode case
 
 ```go
 v := str.Of("go gopher GO").ReplaceLastFold("GO", "Go").String()
-str.Dump(v)
+println(v)
 // #string go gopher Go
 ```
 
@@ -717,7 +703,7 @@ ReplaceMatches applies repl to each regex match and returns the result.
 ```go
 re := regexp.MustCompile(`\d+`)
 v := str.Of("Hello 123 World").ReplaceMatches(re, func(m string) string { return "[" + m + "]" }).String()
-str.Dump(v)
+println(v)
 // #string Hello [123] World
 ```
 
@@ -727,7 +713,7 @@ ReplaceStart replaces old with repl at the start of the string, if present.
 
 ```go
 v := str.Of("prefix-value").ReplaceStart("prefix-", "new-").String()
-str.Dump(v)
+println(v)
 // #string new-value
 ```
 
@@ -738,7 +724,7 @@ Swap replaces multiple values using strings.Replacer built from a map.
 ```go
 pairs := map[string]string{"Gophers": "GoForj", "are": "is", "great": "fantastic"}
 v := str.Of("Gophers are great!").Swap(pairs).String()
-str.Dump(v)
+println(v)
 // #string GoForj is fantastic!
 ```
 
@@ -751,7 +737,7 @@ Empty substrings return true to match strings.Contains semantics.
 
 ```go
 v := str.Of("Go means gophers").Contains("rust", "gopher")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -762,7 +748,7 @@ Empty substrings are ignored.
 
 ```go
 v := str.Of("Go means gophers").ContainsAll("Go", "gopher")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -774,7 +760,7 @@ Empty substrings are ignored.
 
 ```go
 v := str.Of("Go means gophers").ContainsAllFold("go", "GOPHER")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -786,7 +772,7 @@ Empty substrings return true.
 
 ```go
 v := str.Of("Go means gophers").ContainsFold("GOPHER", "rust")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -796,7 +782,7 @@ Count returns the number of non-overlapping occurrences of sub.
 
 ```go
 v := str.Of("gogophergo").Count("go")
-str.Dump(v)
+println(v)
 // #int 3
 ```
 
@@ -807,7 +793,7 @@ Empty substrings are ignored.
 
 ```go
 v := str.Of("gophers are great")
-str.Dump(v.DoesntContain("rust", "beam"))
+println(v.DoesntContain("rust", "beam"))
 // #bool true
 ```
 
@@ -818,7 +804,7 @@ Empty substrings are ignored.
 
 ```go
 v := str.Of("gophers are great")
-str.Dump(v.DoesntContainFold("GOPHER"))
+println(v.DoesntContainFold("GOPHER"))
 // #bool false
 ```
 
@@ -828,7 +814,7 @@ DoesntEndWith reports true if the string ends with none of the provided suffixes
 
 ```go
 v := str.Of("gopher")
-str.Dump(v.DoesntEndWith("her", "cat"))
+println(v.DoesntEndWith("her", "cat"))
 // #bool false
 ```
 
@@ -838,7 +824,7 @@ DoesntEndWithFold reports true if the string ends with none of the provided suff
 
 ```go
 v := str.Of("gopher")
-str.Dump(v.DoesntEndWithFold("HER"))
+println(v.DoesntEndWithFold("HER"))
 // #bool false
 ```
 
@@ -848,7 +834,7 @@ DoesntStartWith reports true if the string starts with none of the provided pref
 
 ```go
 v := str.Of("gopher")
-str.Dump(v.DoesntStartWith("go", "rust"))
+println(v.DoesntStartWith("go", "rust"))
 // #bool false
 ```
 
@@ -858,7 +844,7 @@ DoesntStartWithFold reports true if the string starts with none of the provided 
 
 ```go
 v := str.Of("gopher")
-str.Dump(v.DoesntStartWithFold("GO"))
+println(v.DoesntStartWithFold("GO"))
 // #bool false
 ```
 
@@ -868,7 +854,7 @@ EndsWith reports whether the string ends with any of the provided suffixes (case
 
 ```go
 v := str.Of("gopher").EndsWith("her", "cat")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -878,7 +864,7 @@ EndsWithFold reports whether the string ends with any of the provided suffixes u
 
 ```go
 v := str.Of("gopher").EndsWithFold("HER")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -888,7 +874,7 @@ Index returns the rune index of the first occurrence of sub, or -1 if not found.
 
 ```go
 v := str.Of("héllo").Index("llo")
-str.Dump(v)
+println(v)
 // #int 2
 ```
 
@@ -898,7 +884,7 @@ LastIndex returns the rune index of the last occurrence of sub, or -1 if not fou
 
 ```go
 v := str.Of("go gophers go").LastIndex("go")
-str.Dump(v)
+println(v)
 // #int 10
 ```
 
@@ -908,7 +894,7 @@ StartsWith reports whether the string starts with any of the provided prefixes (
 
 ```go
 v := str.Of("gopher").StartsWith("go", "rust")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -918,7 +904,7 @@ StartsWithFold reports whether the string starts with any of the provided prefix
 
 ```go
 v := str.Of("gopher").StartsWithFold("GO")
-str.Dump(v)
+println(v)
 // #bool true
 ```
 
@@ -931,7 +917,7 @@ Not locale-aware; intended for identifiers/URLs.
 
 ```go
 v := str.Of("Go Forj Toolkit").Slug("-").String()
-str.Dump(v)
+println(v)
 // #string go-forj-toolkit
 ```
 
@@ -945,7 +931,7 @@ Omission is used at the start/end when text is trimmed (default "...").
 
 ```go
 v := str.Of("This is my name").Excerpt("my", 3, "...")
-str.Dump(v.String())
+println(v.String())
 // #string ...is my na...
 ```
 
@@ -957,7 +943,7 @@ Lines splits the string into lines after normalizing newline variants.
 
 ```go
 v := str.Of("a\\r\\nb\\nc").Lines()
-str.Dump(v)
+println(v)
 // #[]string [a b c]
 ```
 
@@ -967,7 +953,7 @@ Split splits the string by the given separator.
 
 ```go
 v := str.Of("a,b,c").Split(",")
-str.Dump(v)
+println(v)
 // #[]string [a b c]
 ```
 
@@ -977,7 +963,7 @@ UcSplit splits the string on uppercase boundaries and delimiters, returning segm
 
 ```go
 v := str.Of("HTTPRequestID").UcSplit()
-str.Dump(v)
+println(v)
 // #[]string [HTTP Request ID]
 ```
 
@@ -990,7 +976,7 @@ If sep is empty or not found, the original string is returned.
 
 ```go
 v := str.Of("gopher::go").After("::").String()
-str.Dump(v)
+println(v)
 // #string go
 ```
 
@@ -1001,7 +987,7 @@ If sep is empty or not found, the original string is returned.
 
 ```go
 v := str.Of("pkg/path/file.txt").AfterLast("/").String()
-str.Dump(v)
+println(v)
 // #string file.txt
 ```
 
@@ -1012,7 +998,7 @@ If sep is empty or not found, the original string is returned.
 
 ```go
 v := str.Of("gopher::go").Before("::").String()
-str.Dump(v)
+println(v)
 // #string gopher
 ```
 
@@ -1023,7 +1009,7 @@ If sep is empty or not found, the original string is returned.
 
 ```go
 v := str.Of("pkg/path/file.txt").BeforeLast("/").String()
-str.Dump(v)
+println(v)
 // #string pkg/path
 ```
 
@@ -1034,7 +1020,7 @@ Returns an empty string if either marker is missing or overlapping.
 
 ```go
 v := str.Of("This is my name").Between("This", "name").String()
-str.Dump(v)
+println(v)
 // #string  is my
 ```
 
@@ -1045,7 +1031,7 @@ Returns an empty string if markers are missing.
 
 ```go
 v := str.Of("[a] bc [d]").BetweenFirst("[", "]").String()
-str.Dump(v)
+println(v)
 // #string a
 ```
 
@@ -1055,7 +1041,7 @@ CharAt returns the rune at the given index and true if within bounds.
 
 ```go
 v, ok := str.Of("gopher").CharAt(2)
-str.Dump(string(v), ok)
+println(string(v), ok)
 // #string p
 // #bool true
 ```
@@ -1066,7 +1052,7 @@ Limit truncates the string to length runes, appending suffix if truncation occur
 
 ```go
 v := str.Of("Perfectly balanced, as all things should be.").Limit(10, "...").String()
-str.Dump(v)
+println(v)
 // #string Perfectly...
 ```
 
@@ -1077,7 +1063,7 @@ Indices are clamped; if start >= end the result is empty.
 
 ```go
 v := str.Of("naïve café").Slice(3, 7).String()
-str.Dump(v)
+println(v)
 // #string e ca
 ```
 
@@ -1087,7 +1073,7 @@ SubstrReplace replaces the rune slice in [start:end) with repl.
 
 ```go
 v := str.Of("naïve café").SubstrReplace("i", 2, 3).String()
-str.Dump(v)
+println(v)
 // #string naive café
 ```
 
@@ -1097,7 +1083,7 @@ Take returns the first length runes of the string (clamped).
 
 ```go
 v := str.Of("gophers").Take(3).String()
-str.Dump(v)
+println(v)
 // #string gop
 ```
 
@@ -1107,7 +1093,7 @@ TakeLast returns the last length runes of the string (clamped).
 
 ```go
 v := str.Of("gophers").TakeLast(4).String()
-str.Dump(v)
+println(v)
 // #string hers
 ```
 
@@ -1119,7 +1105,7 @@ Repeat repeats the string count times (non-negative).
 
 ```go
 v := str.Of("go").Repeat(3).String()
-str.Dump(v)
+println(v)
 // #string gogogo
 ```
 
@@ -1129,7 +1115,7 @@ Reverse returns a rune-safe reversed string.
 
 ```go
 v := str.Of("naïve").Reverse().String()
-str.Dump(v)
+println(v)
 // #string evïan
 ```
 
@@ -1139,7 +1125,7 @@ Transliterate replaces a small set of accented runes with ASCII equivalents.
 
 ```go
 v := str.Of("café déjà vu").Transliterate().String()
-str.Dump(v)
+println(v)
 // #string cafe deja vu
 ```
 
@@ -1151,7 +1137,7 @@ FirstWord returns the first word token or empty string.
 
 ```go
 v := str.Of("Hello world")
-str.Dump(v.FirstWord().String())
+println(v.FirstWord().String())
 // #string Hello
 ```
 
@@ -1161,7 +1147,7 @@ Join joins the provided words with sep.
 
 ```go
 v := str.Of("unused").Join([]string{"foo", "bar"}, "-").String()
-str.Dump(v)
+println(v)
 // #string foo-bar
 ```
 
@@ -1171,7 +1157,7 @@ LastWord returns the last word token or empty string.
 
 ```go
 v := str.Of("Hello world").LastWord().String()
-str.Dump(v)
+println(v)
 // #string world
 ```
 
@@ -1181,7 +1167,7 @@ SplitWords splits the string into words (Unicode letters/digits runs).
 
 ```go
 v := str.Of("one, two, three").SplitWords()
-str.Dump(v)
+println(v)
 // #[]string [one two three]
 ```
 
@@ -1191,7 +1177,7 @@ WordCount returns the number of word tokens (letters/digits runs).
 
 ```go
 v := str.Of("Hello, world!").WordCount()
-str.Dump(v)
+println(v)
 // #int 2
 ```
 
@@ -1201,7 +1187,7 @@ Words limits the string to count words, appending suffix if truncated.
 
 ```go
 v := str.Of("Perfectly balanced, as all things should be.").Words(3, " >>>").String()
-str.Dump(v)
+println(v)
 // #string Perfectly balanced as >>>
 ```
 
@@ -1211,7 +1197,7 @@ WrapWords wraps the string to the given width on word boundaries, using breakStr
 
 ```go
 v := str.Of("The quick brown fox jumped over the lazy dog.").WrapWords(20, "\n").String()
-str.Dump(v)
+println(v)
 // #string The quick brown fox\njumped over the lazy\ndog.
 ```
 <!-- api:embed:end -->

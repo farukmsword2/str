@@ -10,6 +10,6 @@ func main() {
 
 	// Example: split on comma
 	v := str.Of("a,b,c").Split(",")
-	str.Dump(v)
+	println(v)
 	// #[]string [a b c]
 }

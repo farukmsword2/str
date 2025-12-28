@@ -10,6 +10,6 @@ func main() {
 
 	// Example: limit words
 	v := str.Of("Perfectly balanced, as all things should be.").Words(3, " >>>").String()
-	str.Dump(v)
+	println(v)
 	// #string Perfectly balanced as >>>
 }

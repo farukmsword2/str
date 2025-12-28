@@ -10,6 +10,6 @@ func main() {
 
 	// Example: replace last (case-insensitive)
 	v := str.Of("go gopher GO").ReplaceLastFold("GO", "Go").String()
-	str.Dump(v)
+	println(v)
 	// #string go gopher Go
 }

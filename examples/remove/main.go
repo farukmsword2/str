@@ -10,6 +10,6 @@ func main() {
 
 	// Example: remove substrings
 	v := str.Of("The Go Toolkit").Remove("Go ").String()
-	str.Dump(v)
+	println(v)
 	// #string The Toolkit
 }

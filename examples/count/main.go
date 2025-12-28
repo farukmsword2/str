@@ -10,6 +10,6 @@ func main() {
 
 	// Example: count substring
 	v := str.Of("gogophergo").Count("go")
-	str.Dump(v)
+	println(v)
 	// #int 3
 }

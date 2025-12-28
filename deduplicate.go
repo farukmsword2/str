@@ -7,7 +7,7 @@ package str
 // Example: collapse spaces
 //
 //	v := str.Of("The   Go   Playground").Deduplicate(' ').String()
-//	str.Dump(v)
+//	println(v)
 //	// #string The Go Playground
 func (s String) Deduplicate(char rune) String {
 	if char == 0 {

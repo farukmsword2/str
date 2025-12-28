@@ -10,6 +10,6 @@ func main() {
 
 	// Example: squish whitespace
 	v := str.Of("   go   forj  ").Squish().String()
-	str.Dump(v)
+	println(v)
 	// #string go forj
 }

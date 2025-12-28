@@ -8,7 +8,7 @@ import "regexp"
 // Example: regex match
 //
 //	v := str.Of("abc123").IsMatch(regexp.MustCompile(`\d+`))
-//	str.Dump(v)
+//	println(v)
 //	// #bool true
 func (s String) IsMatch(re *regexp.Regexp) bool {
 	if re == nil {

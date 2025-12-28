@@ -8,7 +8,7 @@ import "strings"
 // Example: uppercase text
 //
 //	v := str.Of("GoLang").ToUpper().String()
-//	str.Dump(v)
+//	println(v)
 //	// #string GOLANG
 func (s String) ToUpper() String {
 	return String{s: strings.ToUpper(s.s)}

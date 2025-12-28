@@ -10,6 +10,6 @@ func main() {
 
 	// Example: replace all (case-insensitive)
 	v := str.Of("go gopher GO").ReplaceFold("GO", "Go").String()
-	str.Dump(v)
+	println(v)
 	// #string Go Gopher Go
 }

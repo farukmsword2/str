@@ -11,6 +11,6 @@ func main() {
 
 	// Example: contains any
 	v := str.Of("Go means gophers").Contains("rust", "gopher")
-	str.Dump(v)
+	println(v)
 	// #bool true
 }

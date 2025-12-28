@@ -10,6 +10,6 @@ func main() {
 
 	// Example: replace many
 	v := str.Of("The---Go---Toolkit")
-	str.Dump(v.ReplaceArray([]string{"---"}, "-").String())
+	println(v.ReplaceArray([]string{"---"}, "-").String())
 	// #string The-Go-Toolkit
 }

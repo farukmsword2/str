@@ -11,6 +11,6 @@ func main() {
 
 	// Example: minimal span between markers
 	v := str.Of("[a] bc [d]").BetweenFirst("[", "]").String()
-	str.Dump(v)
+	println(v)
 	// #string a
 }

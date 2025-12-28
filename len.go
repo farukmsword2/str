@@ -8,7 +8,7 @@ import "unicode/utf8"
 // Example: count runes instead of bytes
 //
 //	v := str.Of("gophers 🦫").Len()
-//	str.Dump(v)
+//	println(v)
 //	// #int 9
 func (s String) Len() int {
 	return utf8.RuneCountInString(s.s)
@@ -20,7 +20,7 @@ func (s String) Len() int {
 // Example: alias for Len
 //
 //	v := str.Of("naïve").RuneCount()
-//	str.Dump(v)
+//	println(v)
 //	// #int 5
 func (s String) RuneCount() int {
 	return s.Len()

@@ -10,7 +10,7 @@ func main() {
 
 	// Example: base64 decode
 	v, err := str.Of("Z29waGVy").FromBase64()
-	str.Dump(v.String(), err)
+	println(v.String(), err)
 	// #string gopher
 	// #error <nil>
 }

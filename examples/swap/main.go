@@ -11,6 +11,6 @@ func main() {
 	// Example: swap map
 	pairs := map[string]string{"Gophers": "GoForj", "are": "is", "great": "fantastic"}
 	v := str.Of("Gophers are great!").Swap(pairs).String()
-	str.Dump(v)
+	println(v)
 	// #string GoForj is fantastic!
 }

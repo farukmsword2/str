@@ -9,7 +9,7 @@ import "strings"
 // Example: slice after marker
 //
 //	v := str.Of("gopher::go").After("::").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string go
 func (s String) After(sep string) String {
 	if sep == "" {
@@ -31,7 +31,7 @@ func (s String) After(sep string) String {
 // Example: slice after last separator
 //
 //	v := str.Of("pkg/path/file.txt").AfterLast("/").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string file.txt
 func (s String) AfterLast(sep string) String {
 	if sep == "" {

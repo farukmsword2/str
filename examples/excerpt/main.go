@@ -12,6 +12,6 @@ func main() {
 
 	// Example: excerpt with radius
 	v := str.Of("This is my name").Excerpt("my", 3, "...")
-	str.Dump(v.String())
+	println(v.String())
 	// #string ...is my na...
 }

@@ -10,6 +10,6 @@ func main() {
 
 	// Example: title case words
 	v := str.Of("a nice title uses the correct case").Title().String()
-	str.Dump(v)
+	println(v)
 	// #string A Nice Title Uses The Correct Case
 }

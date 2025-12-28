@@ -9,7 +9,7 @@ import "strings"
 // Example: slice before marker
 //
 //	v := str.Of("gopher::go").Before("::").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string gopher
 func (s String) Before(sep string) String {
 	if sep == "" {
@@ -29,7 +29,7 @@ func (s String) Before(sep string) String {
 // Example: slice before last separator
 //
 //	v := str.Of("pkg/path/file.txt").BeforeLast("/").String()
-//	str.Dump(v)
+//	println(v)
 //	// #string pkg/path
 func (s String) BeforeLast(sep string) String {
 	if sep == "" {

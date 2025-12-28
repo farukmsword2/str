@@ -11,6 +11,6 @@ func main() {
 
 	// Example: between first and last
 	v := str.Of("This is my name").Between("This", "name").String()
-	str.Dump(v)
+	println(v)
 	// #string  is my
 }

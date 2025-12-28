@@ -10,6 +10,6 @@ func main() {
 
 	// Example: split lines
 	v := str.Of("a\\r\\nb\\nc").Lines()
-	str.Dump(v)
+	println(v)
 	// #[]string [a b c]
 }

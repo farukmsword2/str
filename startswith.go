@@ -8,7 +8,7 @@ import "strings"
 // Example: starts with any
 //
 //	v := str.Of("gopher").StartsWith("go", "rust")
-//	str.Dump(v)
+//	println(v)
 //	// #bool true
 func (s String) StartsWith(prefixes ...string) bool {
 	if len(prefixes) == 0 {
@@ -28,7 +28,7 @@ func (s String) StartsWith(prefixes ...string) bool {
 // Example: starts with (case-insensitive)
 //
 //	v := str.Of("gopher").StartsWithFold("GO")
-//	str.Dump(v)
+//	println(v)
 //	// #bool true
 func (s String) StartsWithFold(prefixes ...string) bool {
 	if len(prefixes) == 0 {

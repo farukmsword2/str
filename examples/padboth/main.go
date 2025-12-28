@@ -10,6 +10,6 @@ func main() {
 
 	// Example: pad both
 	v := str.Of("go").PadBoth(6, "-").String()
-	str.Dump(v)
+	println(v)
 	// #string --go--
 }

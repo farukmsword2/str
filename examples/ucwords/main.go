@@ -11,6 +11,6 @@ func main() {
 
 	// Example: uppercase each word start
 	v := str.Of("hello WORLD").UcWords().String()
-	str.Dump(v)
+	println(v)
 	// #string Hello WORLD
 }

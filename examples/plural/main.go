@@ -10,6 +10,6 @@ func main() {
 
 	// Example: pluralize word
 	v := str.Of("city").Plural().String()
-	str.Dump(v)
+	println(v)
 	// #string cities
 }

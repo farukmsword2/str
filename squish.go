@@ -8,7 +8,7 @@ import "unicode"
 // Example: squish whitespace
 //
 //	v := str.Of("   go   forj  ").Squish().String()
-//	str.Dump(v)
+//	println(v)
 //	// #string go forj
 func (s String) Squish() String {
 	var out []rune
