@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/github/v/tag/goforj/str?label=version&sort=semver" alt="Latest tag">
     <a href="https://codecov.io/gh/goforj/str" ><img src="https://codecov.io/github/goforj/str/graph/badge.svg?token=9KT46ZORP3"/></a>
 <!-- test-count:embed:start -->
-    <img src="https://img.shields.io/badge/tests-167-brightgreen" alt="Tests">
+    <img src="https://img.shields.io/badge/tests-168-brightgreen" alt="Tests">
 <!-- test-count:embed:end -->
     <a href="https://goreportcard.com/report/github.com/goforj/str"><img src="https://goreportcard.com/badge/github.com/goforj/str" alt="Go Report Card"></a>
 </p>
@@ -48,12 +48,12 @@ This guarantees all examples are valid, up-to-date, and remain functional as the
 | **Cleanup** | [Deduplicate](#deduplicate) [NormalizeNewlines](#normalizenewlines) [NormalizeSpace](#normalizespace) [Squish](#squish) [Trim](#trim) [TrimLeft](#trimleft) [TrimRight](#trimright) |
 | **Comparison** | [Equals](#equals) [EqualsFold](#equalsfold) |
 | **Compose** | [Append](#append) [NewLine](#newline) [Prepend](#prepend) |
+| **Debug** | [Dump](#dump) |
 | **Encoding** | [FromBase64](#frombase64) [ToBase64](#tobase64) |
 | **Fluent** | [GoString](#gostring) [Of](#of) [String](#string) |
 | **Length** | [Len](#len) [RuneCount](#runecount) |
 | **Masking** | [Mask](#mask) |
 | **Match** | [Is](#is) [IsMatch](#ismatch) |
-| **Other** | [Dump](#dump) |
 | **Padding** | [PadBoth](#padboth) [PadLeft](#padleft) [PadRight](#padright) |
 | **Replace** | [Remove](#remove) [ReplaceAll](#replaceall) [ReplaceArray](#replacearray) [ReplaceFirst](#replacefirst) [ReplaceFirstFold](#replacefirstfold) [ReplaceFold](#replacefold) [ReplaceLast](#replacelast) [ReplaceLastFold](#replacelastfold) [ReplaceMatches](#replacematches) [Swap](#swap) |
 | **Search** | [Contains](#contains) [ContainsAll](#containsall) [ContainsAllFold](#containsallfold) [ContainsFold](#containsfold) [Count](#count) [DoesntContain](#doesntcontain) [DoesntContainFold](#doesntcontainfold) [DoesntEndWith](#doesntendwith) [DoesntEndWithFold](#doesntendwithfold) [DoesntStartWith](#doesntstartwith) [DoesntStartWithFold](#doesntstartwithfold) [EndsWith](#endswith) [EndsWithFold](#endswithfold) [Index](#index) [LastIndex](#lastindex) [StartsWith](#startswith) [StartsWithFold](#startswithfold) |
@@ -410,6 +410,19 @@ str.Dump(v)
 // #string Hello Go World
 ```
 
+## Debug
+
+### <a id="dump"></a>Dump
+
+Dump is a thin alias for godump.Dump, provided to keep examples concise
+and readable in documentation and code snippets.
+
+```go
+str.Dump("go", 42)
+// #string go
+// #int 42
+```
+
 ## Encoding
 
 ### <a id="frombase64"></a>FromBase64
@@ -523,13 +536,6 @@ v := str.Of("abc123").IsMatch(regexp.MustCompile(`\d+`))
 str.Dump(v)
 // #bool true
 ```
-
-## Other
-
-### <a id="dump"></a>Dump
-
-Dump is a thin alias for godump.Dump, provided to keep examples concise
-and readable in documentation and code snippets.
 
 ## Padding
 
