@@ -6,7 +6,7 @@ package main
 import "github.com/goforj/str"
 
 func main() {
-	// TrimLeft trims leading characters. If cutset is empty, trims Unicode whitespace.
+	// TrimLeft trims leading characters. If cutset is the zero value (empty string), trims Unicode whitespace.
 
 	// Example: trim left
 	v := str.Of("  GoForj  ").TrimLeft("").String()
